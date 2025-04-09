@@ -1,0 +1,744 @@
+:root {
+    --primary: #4b3f39; /* Coklat gelap elegan untuk background utama */
+    --accent: #b07b56;   /* Coklat latte untuk link dan aksen */
+    --text-color: #f5eae0; /* Cream soft yang kontras & hangat untuk teks di atas background gelap */
+    --glass-bg: rgba(255, 248, 240, 0.15); /* Glassmorphism dengan nuansa cream */
+    --glass-border: rgba(176, 123, 86, 0.25); /* Border coklat latte transparan */
+    --shadow: 0 12px 30px rgba(245, 234, 224, 0.15); /* Shadow terang lembut, biar efek glowing */
+    --gradient: linear-gradient(135deg, #5e4c45, #7c665b, #a0897a); /* Gradient coklat earthy */
+    --font-main: 'Outfit', sans-serif;
+    --golden: 1.618;
+  }  
+  
+  /* RESET */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  
+  body {
+    font-family: var(--font-main);
+    background: var(--gradient);
+    background-size: 300% 300%;
+    animation: gradientShift 25s ease infinite;
+    color: var(--text-color);
+    overflow-x: hidden;
+    line-height: var(--golden);
+    font-size: 16px;
+  }  
+  
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  /* HERO */
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 2rem;
+    position: relative;
+    color: #3a2c21;
+  }
+  
+  .glass {
+    background: #fffefc;
+    text-align: center;
+    padding: 3rem 1.5rem;
+    border-radius: 1.5rem;
+    max-width: 550px;
+    width: 100%;
+    animation: fadeIn 1.5s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-bottom: 1.2rem;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+  
+  h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  .tagline {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+  
+  .social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .btn {
+    background: #3e2f23; /* dark brown earthy background */
+    color: #f5efe6; /* creamy text */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn:hover {
+    transform: scale(1.2) rotate(5deg);
+    background: #4e392b; /* slightly lighter brown on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Social platform brand tones - soft & earthy */
+  .btn.linkedin {
+    color: #a4bbc6; /* soft dusty blue */
+  }
+  
+  .btn.youtube {
+    color: #e19a9a; /* soft clay red */
+  }
+  
+  .btn.tiktok {
+    color: #b5a8a8; /* muted warm gray */
+  }
+  
+  .btn.instagram {
+    color: #d3a3b5; /* warm dusty pink */
+  }  
+  
+
+/* ======== SECTION UMUM ======== */
+section {
+    padding: 5rem 2rem;
+  }
+  
+  /* ======== SOCIAL SECTION ======== */
+  .social-section {
+    backdrop-filter: blur(10px);
+    text-align: center;
+  }
+  
+  /* Section Title */
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+    color: #fffefc /* Cream soft untuk title */
+  }
+  
+  /* Grid Cards */
+  .social-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  /* Individual Card */
+  .social-card {
+    background: #fffefc; /* Warna card creamy */
+    border: 1px solid rgba(62, 47, 47, 0.15); /* Border dark brown transparan */
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 12px 30px rgba(62, 47, 47, 0.15); /* Shadow lembut coklat tua */
+    backdrop-filter: blur(12px);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .social-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 14px 34px rgba(62, 47, 47, 0.2);
+  }
+  
+  /* Foto Profile */
+  .social-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid white;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+  
+  /* Nama */
+  .social-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    color: #3e2f2f;
+  }
+  
+  /* Deskripsi */
+  .social-card p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    opacity: 0.85;
+    color: #3e2f2f;
+  }
+  
+  /* Stats */
+  .stats {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .stats li {
+    margin: 4px 0;
+    font-size: 0.9rem;
+    color: #3e2f2f;
+  }
+  
+  /* Tombol Follow */
+  .follow-btn {
+    margin-top: auto;
+    background: #3e2f2f;   /* Deep dark brown */
+    color: #fdf6ee;         /* Soft cream text */
+    padding: 0.7rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(62, 47, 47, 0.15);
+  }
+  
+  .follow-btn:hover {
+    transform: scale(1.05) translateY(-3px);
+    background: #4e392b; /* Hover state – lebih terang sedikit */
+    box-shadow: 0 8px 20px rgba(62, 47, 47, 0.25);
+    color: #fffefc;
+  }
+  
+  /* CONTACT */
+  .contact {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .contact-box {
+    max-width: 600px;
+    background: #fffefc;
+    padding: 3rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow);
+    text-align: center;
+  }
+  
+  .contact-box h2 {
+    font-size: 2rem;
+    color: #3a2c21;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-box p {
+    font-size: 1rem;
+    color: #3a2c21;
+    margin-bottom: 2rem;
+  }
+  
+  .contact-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #3e2f23; /* dark brown background */
+    color: #f5efe6; /* creamy text */
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .contact-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    background: #4e392b; /* slightly lighter brown on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+  
+  .contact-btn i {
+    font-size: 1.2rem;
+  }
+  
+  /* Soft brand tones with earthy tint */
+  .contact-btn.whatsapp {
+    color: #a4d4ae; /* earthy green */
+  }
+  
+  .contact-btn.email {
+    color: #e1a497; /* warm terracotta pink */
+  }  
+  
+/* ======== ABOUT SECTION ======== */
+.about {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+    color: #fffefc;
+  }
+  
+  .about-glass {
+    width: 100%;
+    max-width: 550px;
+    background: #fffefc; /* Soft cream with transparency */
+    border: 1px solid rgba(176, 123, 86, 0.25); /* Latte-ish border */
+    border-radius: 1.5rem;
+    box-shadow: 0 12px 30px rgba(62, 47, 47, 0.1); /* Soft brown shadow */
+    padding: 3rem 2.5rem;
+    text-align: center;
+    box-sizing: border-box;
+    backdrop-filter: blur(10px);
+  }
+  .about h2 {
+    color: #3a2c21;
+    margin-bottom: 0.5rem;
+  }
+  
+  .about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    font-weight: 400;
+    color: #3a2c21; /* Rich dark brown text */
+  }
+  
+  /* ======== RESPONSIVE ADJUSTMENTS ======== */
+  @media (max-width: 768px) {
+    .about {
+      padding: 2.5rem 1.25rem;
+    }
+  
+    .about-glass {
+      padding: 2.5rem 1.5rem;
+    }
+  
+    .about-text {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .about {
+      padding: 2rem 1rem;
+    }
+  
+    .about-glass {
+      padding: 2rem 1rem;
+    }
+  
+    .about-text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .glass {
+        padding: 2.5rem 1.5rem;
+    }
+  }  
+  
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .glass {
+        padding: 2.5rem 1.5rem;
+    }
+  
+    .profile-pic {
+      width: 110px;
+      height: 110px;
+    }
+  
+    h1 {
+      font-size: 1.8rem;
+    }
+  
+    .tagline {
+      font-size: 1rem;
+    }
+  
+    .btn {
+      width: 42px;
+      height: 42px;
+      font-size: 1.1rem;
+    }
+  
+    .contact-box {
+      padding: 2rem 1rem;
+    }
+  
+    .contact-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  .site-footer {
+    width: 100vw;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 3rem 2rem;
+    color: var(--text-color);
+    font-family: var(--font-main);
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* ==== Estetik Footer Styling (Font Outfit) ==== */
+.site-footer {
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(145deg, #fef8f4, #f7ece2);
+    padding: 5.2rem 2rem 3rem;
+    box-shadow: 0 -4px 30px rgba(0,0,0,0.05);
+    color: #3e2f2f;
+  }
+  
+  .footer-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .footer-info {
+    flex: 1 1 55%;
+  }
+  
+  .footer-info h2 {
+    font-size: 1.618rem;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+  }
+  
+  .footer-info p {
+    font-size: 1rem;
+    line-height: 1.618;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-branding {
+    flex: 1 1 35%;
+    text-align: right;
+  }
+  
+  .footer-branding img {
+    width: 130px;
+    margin-bottom: 1rem;
+    opacity: 0.85;
+    transition: transform 0.3s ease;
+  }
+  
+  .footer-branding img:hover {
+    transform: scale(1.05);
+  }
+  
+  .footer-branding p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+  }
+  
+  .footer-link {
+    color: #3e2f2f;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-link:hover {
+    color: #2e1d1d;
+  }
+  
+  .slogan {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 0.95rem;
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid #d6c0b1;
+    padding-top: 1.618rem;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-top: 3rem;
+  }
+  
+  /* ==== Responsive Fonts ==== */
+  @media (max-width: 768px) {
+    .footer-info h2 {
+      font-size: 1.4rem;
+    }
+  
+    .footer-info p,
+    .footer-branding p,
+    .slogan {
+      font-size: 0.95rem;
+    }
+  
+    .footer-bottom {
+      font-size: 0.85rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer-info h2 {
+      font-size: 1.25rem;
+    }
+  
+    .footer-info p,
+    .footer-branding p,
+    .slogan {
+      font-size: 0.85rem;
+    }
+  
+    .footer-branding img {
+      width: 100px;
+    }
+  
+    .footer-bottom {
+      font-size: 0.75rem;
+    }
+  }
+  
+  
+/* ======== REKOMENDASI SECTION ======== */
+.recommended-products {
+    padding: 5rem 2rem;
+    overflow-x: hidden;
+  }
+  
+  .recommended-products .section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    color: #fffefc;
+    animation: fadeInDown 1s ease-in-out;
+  }
+  
+  /* Optional CTA Subtitle */
+  .recommended-products .section-subtitle {
+    text-align: center;
+    font-size: 1rem;
+    color: #fffefc;
+    opacity: 0.9;
+    margin-bottom: 3rem;
+    max-width: 620px;
+    margin-inline: auto;
+  }
+  
+  /* Grid */
+  .product-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeInUp 1.2s ease-in-out;
+  }
+  
+  /* Product Card */
+  .product-card {
+    background: #fffefc;; /* FIXED creamy brown bg */
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(62, 47, 47, 0.1);
+  }
+  
+  .product-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 14px 36px rgba(62, 47, 47, 0.2);
+  }
+  
+  /* Numbering */
+  .product-number {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #3e2f2f;
+    margin: 1rem 0;
+    text-align: center;
+  }
+  
+  /* Image */
+  .product-card img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.4s ease;
+  }
+  
+  .product-card:hover img {
+    transform: scale(1.04);
+  }
+  
+  /* Product Info */
+  .product-info {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #3e2f2f;
+  }
+  
+  /* Category */
+  .product-category {
+    font-size: 0.9rem;
+    color: #3e2f2f;
+    opacity: 0.85;
+    margin-bottom: 0.3rem;
+  }
+  
+  /* Title */
+  .product-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #3e2f2f;
+    margin-bottom: 1rem;
+  }
+  
+  /* Buy Button */
+  .buy-btn {
+    display: inline-block;
+    background: transparent;
+    color: #3e2f2f;
+    border: 2px solid #3e2f2f;
+    padding: 0.618rem 1.2rem;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    margin-top: auto;
+    text-align: center;
+  }
+  
+  .buy-btn:hover {
+    background: #3e2f2f;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(62, 47, 47, 0.3);
+    transform: scale(1.05);
+  }
+  
+  /* ======== RESPONSIVE ======== */
+  @media (max-width: 1024px) {
+    .recommended-products {
+      padding: 4rem 1.5rem;
+    }
+  
+    .recommended-products .section-title {
+      font-size: 1.9rem;
+    }
+  
+    .product-title {
+      font-size: 1.1rem;
+    }
+  
+    .product-info {
+      padding: 1.3rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .recommended-products {
+      padding: 3.2rem 1rem;
+    }
+  
+    .recommended-products .section-title {
+      font-size: 1.7rem;
+    }
+  
+    .product-cards {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  
+    .product-title {
+      font-size: 1rem;
+    }
+  
+    .buy-btn {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+  
+    .product-info {
+      padding: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .recommended-products {
+      padding: 2.5rem 1rem;
+    }
+  
+    .recommended-products .section-title {
+      font-size: 1.5rem;
+    }
+  
+    .product-title {
+      font-size: 0.95rem;
+    }
+  
+    .buy-btn {
+      font-size: 0.85rem;
+      padding: 0.45rem 0.9rem;
+    }
+  }
+  
